@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import { DatePicker } from 'antd';
+
 class MainComponent extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +29,7 @@ class MainComponent extends Component {
             <div>
                 Main 페이지 변경<br />
                 서버로부터 온 메시지: {this.state.message}
+                <DatePicker />
             </div>
         );
     }
