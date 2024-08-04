@@ -1,7 +1,6 @@
 import React from 'react';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import mainComponent from "./components/MainComponent";
 import MainComponent from "./components/MainComponent";
 const { Header, Content, Sider } = Layout;
 const items1 = ['1', '2', '3'].map((key) => ({
