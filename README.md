@@ -26,13 +26,13 @@ npm install maven # 메이븐
 
 ### 프록시 설정
 빌드한 뒤 서버를 실행하면 프론트, 백엔드는 같은 포트로 동작하지만, <br>
-개발 시 React Dev Server(port: 3000), Spring Server(port: 8080)로 포트가 나뉘어 실행되기 때문에,<br>
+개발 시 React Dev Server(port: 3000), Spring Server(port: 8090)로 포트가 나뉘어 실행되기 때문에,<br>
 CORS를 방지하기 위해 
 [프록시](https://github.com/hch0821/React.js-Example/tree/master/j.proxy) 설정이 필요합니다.<br><br>
 
 #### frontend/Package.json에 다음 한 줄 추가
 ```json
-"proxy":"http://localhost:8080
+"proxy":"http://localhost:8090
 ```
 
 ### 프로젝트 코드

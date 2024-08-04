@@ -10,7 +10,7 @@ public class WebController implements ErrorController{
         return "index";
     }
 
-    @Override
+
     public String getErrorPath() {
         return "/error";
     }
