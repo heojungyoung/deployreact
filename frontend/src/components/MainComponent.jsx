@@ -6,7 +6,8 @@ class MainComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: ""
+            message: "",
+            list: []
         }
     }
 
@@ -18,8 +19,9 @@ class MainComponent extends Component {
         axios.get("/api/hello")
             .then(res => {
                 console.log(res);
+                console.log(res.data);
                 this.setState({
-                    message: res.data.message
+                    list: res.data
                 });
             }).catch(console.error);
     }
@@ -30,8 +32,18 @@ class MainComponent extends Component {
                 Main 페이지 변경<br />
                 서버로부터 온 메시지: {this.state.message}
                 <DatePicker />
+                {this.state.list.map((item, index) => (
+                    <div key={index}>
+                        <p>No {item.trmRqstNo}</p>
+                        <p>Request Type Code: {item.trmRqstTypeCd}</p>
+                        <p>Request Title: {item.trmRqstTlt}</p>
+                        <p>Due Date: {item.trmRqstDueDt}</p>
+                        <p>Comment: {item.trmRqstComt}</p>
+                    </div>
+                ))}
             </div>
         );
     }
 }
+
 export default MainComponent;

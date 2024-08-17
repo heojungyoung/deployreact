@@ -1,6 +1,8 @@
 package com.goodperson.backend.controller;
 
+import com.goodperson.backend.request.RequestService;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -17,9 +19,13 @@ class ApiControllerTest {
 
     private final MockMvc mockMvc;
 
+    private final RequestService requestService;
 
-    ApiControllerTest() {
-        ApiController apiController = new ApiController();
+
+    @Autowired
+    ApiControllerTest(RequestService requestService) {
+        this.requestService = requestService;
+        ApiController apiController = new ApiController(requestService);
         mockMvc = MockMvcBuilders.standaloneSetup(apiController).build();
     }
 
