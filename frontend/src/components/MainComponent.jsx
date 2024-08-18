@@ -3,7 +3,6 @@ import axios from 'axios';
 import { DatePicker } from 'antd';
 import {Table} from 'antd';
 
-
 const columns = [
     {
         title: 'trmRqstNo',
