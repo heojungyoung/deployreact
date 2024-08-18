@@ -41,6 +41,7 @@ class MainComponent extends Component {
         this.getApi();
     }
 
+
     getApi = () => {
         axios.get("/api/hello")
             .then(res => {
