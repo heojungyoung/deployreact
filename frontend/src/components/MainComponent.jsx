@@ -1,6 +1,33 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import { DatePicker } from 'antd';
+import {Table} from 'antd';
+
+
+const columns = [
+    {
+        title: 'trmRqstNo',
+        dataIndex: 'trmRqstNo',
+        key: 'trmRqstNo',
+    },
+    {
+        title: 'trmRqstTypeCd',
+        dataIndex: 'trmRqstTypeCd',
+        key: 'trmRqstTypeCd',
+    },
+    {
+        title: 'trmRqstTlt',
+        dataIndex: 'trmRqstTlt',
+        key: 'trmRqstTlt',
+    },
+    {
+        title: 'trmRqstDueDt',
+        dataIndex: 'trmRqstDueDt',
+        key: 'trmRqstDueDt',
+    },
+];
+
+
 
 class MainComponent extends Component {
     constructor(props) {
@@ -23,6 +50,8 @@ class MainComponent extends Component {
                 this.setState({
                     list: res.data
                 });
+
+
             }).catch(console.error);
     }
 
@@ -32,16 +61,10 @@ class MainComponent extends Component {
                 Main 페이지 변경<br />
                 서버로부터 온 메시지: {this.state.message}
                 <DatePicker />
-                {this.state.list.map((item, index) => (
-                    <div key={index}>
-                        <p>No {item.trmRqstNo}</p>
-                        <p>Request Type Code: {item.trmRqstTypeCd}</p>
-                        <p>Request Title: {item.trmRqstTlt}</p>
-                        <p>Due Date: {item.trmRqstDueDt}</p>
-                        <p>Comment: {item.trmRqstComt}</p>
-                    </div>
-                ))}
+
+                <Table dataSource={this.state.list} columns={columns}/>
             </div>
+
         );
     }
 }
