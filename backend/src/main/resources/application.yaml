@@ -15,14 +15,14 @@ spring:
         format_sql: true
         show_sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
   thymeleaf:
     prefix: classpath:/static/
   mvc:
     view:
       suffix: .html
 server:
-  port: 8091
+  port: 8090
 
 
 ---
