@@ -2,10 +2,12 @@ import React from 'react';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import MainComponent from "./components/MainComponent";
+import TopMenuComponent from './components/TopMenuComponent';
 const { Header, Content, Sider } = Layout;
-const items1 = ['1', '2', '3'].map((key) => ({
-    key,
-    label: `nav ${key}`,
+
+const items1 = ['1', '2'].map((key) => ({
+    key,    
+    label: `nav ${key}`
 }));
 const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
     const key = String(index + 1);
@@ -22,6 +24,7 @@ const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, i
         }),
     };
 });
+ 
 const App = () => {
     const {
         token: { colorBgContainer, borderRadiusLG },
@@ -89,9 +92,17 @@ const App = () => {
                     >
                         Content
                     <MainComponent/>
+                    <TopMenuComponent/>
+
                     </Content>
                 </Layout>
+
+
+            
             </Layout>
+
+
+      
         </Layout>
     );
 };
