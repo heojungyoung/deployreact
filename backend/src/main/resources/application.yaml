@@ -5,7 +5,7 @@ spring:
       on-profile: local
   datasource:
     username: postgres
-    url: jdbc:postgresql://localhost:5432/develop
+    url: jdbc:postgresql://localhost:5432/postgres
     driverClassName: org.postgresql.Driver
     password: xlfldpf1
   jpa:
@@ -25,6 +25,9 @@ server:
   port: 8090
 
 
+
+
+
 ---
 
 spring:
@@ -33,7 +36,8 @@ spring:
       on-profile: ubuntu
   datasource:
     username: postgres
-    url: jdbc:postgresql://192.168.0.227:5432/postgres
+    #url: jdbc:postgresql://192.168.0.227:5432/postgres
+    url: jdbc:postgresql://182.211.204.237:5432/postgres
     driverClassName: org.postgresql.Driver
     password: xlfldpf1
   jpa:
@@ -43,7 +47,7 @@ spring:
         format_sql: true
         show_sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
   thymeleaf:
     prefix: classpath:/static/
   mvc:
@@ -52,5 +56,30 @@ spring:
 server:
   port: 8090
 
+---
 
+spring:
+  config:
+    activate:
+      on-profile: home
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://182.211.204.237:5432/postgres
+    driverClassName: org.postgresql.Driver
+    password: xlfldpf1
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: none
+  thymeleaf:
+    prefix: classpath:/static/
+  mvc:
+    view:
+      suffix: .html
+server:
+  port: 8090
 
