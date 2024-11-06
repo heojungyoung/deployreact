@@ -1,7 +1,6 @@
 import React from 'react';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import MainComponent from "./components/MainComponent";
 import TopMenuComponent from './components/TopMenuComponent';
 const { Header, Content, Sider } = Layout;
 
@@ -81,6 +80,7 @@ const App = () => {
                         <Breadcrumb.Item>List</Breadcrumb.Item>
                         <Breadcrumb.Item>App</Breadcrumb.Item>
                     </Breadcrumb>
+
                     <Content
                         style={{
                             padding: 24,
@@ -91,18 +91,16 @@ const App = () => {
                         }}
                     >
                         Content
-                    <MainComponent/>
-                    <TopMenuComponent/>
+
+                        <TopMenuComponent/>
 
                     </Content>
                 </Layout>
 
 
-            
             </Layout>
 
 
-      
         </Layout>
     );
 };
