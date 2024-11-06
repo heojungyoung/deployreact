@@ -14,9 +14,11 @@ class TopMenuComponent extends Component {
                     <Navbar.Brand>
                         <NavLink exact to="/">Home</NavLink>
                     </Navbar.Brand>
+                    &nbsp;&nbsp;&nbsp;
                     <Navbar.Brand>
                         <NavLink to="/main">Main</NavLink>
                     </Navbar.Brand>
+                    &nbsp;&nbsp;&nbsp;
                     <Navbar.Brand>
                         <NavLink to="/dashboard">Dashboard</NavLink>
                     </Navbar.Brand>
