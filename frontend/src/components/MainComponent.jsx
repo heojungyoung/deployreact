@@ -59,7 +59,7 @@ class MainComponent extends Component {
     render() {
         return (
             <div>
-                Main 페이지 변경<br />
+
                 서버로부터 온 메시지: {this.state.message}
                 <DatePicker />
 
