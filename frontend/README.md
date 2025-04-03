@@ -1,68 +1,186 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center"><a name="readme-top"></a>
 
-## Available Scripts
+<img height="180" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg">
 
-In the project directory, you can run:
+<h1>Ant Design</h1>
 
-### `npm start`
+An enterprise-class UI design language and React UI library.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![CI status][github-action-image]][github-action-url] [![codecov][codecov-image]][codecov-url] [![NPM version][npm-image]][npm-url] [![NPM downloads][download-image]][download-url]
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[![][bundlephobia-image]][bundlephobia-url] [![][jsdelivr-image]][jsdelivr-url] [![FOSSA Status][fossa-image]][fossa-url]
 
-### `npm test`
+[![Follow Twitter][twitter-image]][twitter-url] [![Renovate status][renovate-image]][renovate-dashboard-url] [![][issues-helper-image]][issues-helper-url] [![dumi][dumi-image]][dumi-url] [![Issues need help][help-wanted-image]][help-wanted-url]
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Changelog](./CHANGELOG.en-US.md) · [Report Bug][github-issues-url] · [Request Feature][github-issues-url] · English · [中文](./README-zh_CN.md)
 
-### `npm run build`
+## ❤️ Sponsors and Backers [![](https://opencollective.com/ant-design/tiers/sponsors/badge.svg?label=Sponsors&color=brightgreen)](https://opencollective.com/ant-design#support) [![](https://opencollective.com/ant-design/tiers/backers/badge.svg?label=Backers&color=brightgreen)](https://opencollective.com/ant-design#support)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![](https://opencollective.com/ant-design/tiers/sponsors.svg?avatarHeight=72)](https://opencollective.com/ant-design/contribute/sponsors-218/checkout) [![](https://opencollective.com/ant-design/tiers/backers.svg?avatarHeight=72)](https://opencollective.com/ant-design/contribute/backers-217/checkout)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[npm-image]: https://img.shields.io/npm/v/antd.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/antd
+[github-action-image]: https://github.com/ant-design/ant-design/actions/workflows/test.yml/badge.svg
+[github-action-url]: https://github.com/ant-design/ant-design/actions/workflows/test.yml
+[codecov-image]: https://img.shields.io/codecov/c/github/ant-design/ant-design/master.svg?style=flat-square
+[codecov-url]: https://codecov.io/gh/ant-design/ant-design/branch/master
+[download-image]: https://img.shields.io/npm/dm/antd.svg?style=flat-square
+[download-url]: https://npmjs.org/package/antd
+[fossa-image]: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fant-design%2Fant-design.svg?type=shield
+[fossa-url]: https://app.fossa.io/projects/git%2Bgithub.com%2Fant-design%2Fant-design?ref=badge_shield
+[help-wanted-image]: https://flat.badgen.net/github/label-issues/ant-design/ant-design/help%20wanted/open
+[help-wanted-url]: https://github.com/ant-design/ant-design/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22
+[twitter-image]: https://img.shields.io/twitter/follow/AntDesignUI.svg?label=Ant%20Design
+[twitter-url]: https://twitter.com/AntDesignUI
+[jsdelivr-image]: https://data.jsdelivr.com/v1/package/npm/antd/badge
+[jsdelivr-url]: https://www.jsdelivr.com/package/npm/antd
+[bundlephobia-image]: https://badgen.net/bundlephobia/minzip/antd?style=flat-square
+[bundlephobia-url]: https://bundlephobia.com/package/antd
+[issues-helper-image]: https://img.shields.io/badge/using-actions--cool-blue?style=flat-square
+[issues-helper-url]: https://github.com/actions-cool
+[renovate-image]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat-square
+[renovate-dashboard-url]: https://github.com/ant-design/ant-design/issues/32498
+[dumi-image]: https://img.shields.io/badge/docs%20by-dumi-blue?style=flat-square
+[dumi-url]: https://github.com/umijs/dumi
+[github-issues-url]: https://new-issue.ant.design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+</div>
 
-### `npm run eject`
+[![](https://user-images.githubusercontent.com/507615/209472919-6f7e8561-be8c-4b0b-9976-eb3c692aa20a.png)](https://ant.design)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## ✨ Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 🌈 Enterprise-class UI designed for web applications.
+- 📦 A set of high-quality React components out of the box.
+- 🛡 Written in TypeScript with predictable static types.
+- ⚙️ Whole package of design resources and development tools.
+- 🌍 Internationalization support for dozens of languages.
+- 🎨 Powerful theme customization based on CSS-in-JS.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🖥 Environment Support
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Modern browsers
+- Server-side Rendering
+- [Electron](https://www.electronjs.org/)
 
-## Learn More
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Electron |
+| --- | --- | --- | --- | --- |
+| Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📦 Install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install antd
+```
 
-### Code Splitting
+```bash
+yarn add antd
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```bash
+pnpm add antd
+```
 
-### Analyzing the Bundle Size
+```bash
+bun add antd
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## 🔨 Usage
 
-### Making a Progressive Web App
+```tsx
+import { Button, DatePicker } from 'antd';
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+export default () => (
+  <>
+    <Button type="primary">PRESS ME</Button>
+    <DatePicker placeholder="select date" />
+  </>
+);
+```
 
-### Advanced Configuration
+## 🔗 Links
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- [Home page](https://ant.design/)
+- [Components Overview](https://ant.design/components/overview)
+- [Change Log](CHANGELOG.en-US.md)
+- [rc-components](https://react-component.github.io/)
+- [🆕 Ant Design X](https://x.ant.design/index-cn)
+- [Ant Design Pro](https://pro.ant.design/)
+- [Pro Components](https://procomponents.ant.design)
+- [Ant Design Mobile](https://mobile.ant.design)
+- [Ant Design Mini](https://mini.ant.design)
+- [Ant Design Charts](https://charts.ant.design)
+- [Ant Design Web3](https://web3.ant.design)
+- [Landing Pages](https://landing.ant.design)
+- [Ant Motion](https://motion.ant.design)
+- [Scaffold Market](https://scaffold.ant.design)
+- [Developer Instruction](https://github.com/ant-design/ant-design/wiki/Development)
+- [Versioning Release Note](https://github.com/ant-design/ant-design/wiki/%E8%BD%AE%E5%80%BC%E8%A7%84%E5%88%99%E5%92%8C%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B)
+- [FAQ](https://ant.design/docs/react/faq)
+- [Online Playground](https://u.ant.design/reproduce) for bug reports
+- [Customize Theme](https://ant.design/docs/react/customize-theme)
+- [How to Apply for Being A Collaborator](https://github.com/ant-design/ant-design/wiki/Collaborators#how-to-apply-for-being-a-collaborator)
 
-### Deployment
+## ⌨️ Development
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Use [opensumi.run](https://opensumi.run), a free online pure front-end dev environment.
 
-### `npm run build` fails to minify
+[![opensumi.run](https://custom-icon-badges.demolab.com/badge/opensumi-run-blue.svg?logo=opensumi)](https://opensumi.run/ide/ant-design/ant-design)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Or clone locally:
+
+```bash
+$ git clone git@github.com:ant-design/ant-design.git
+$ cd ant-design
+$ npm install
+$ npm start
+```
+
+Open your browser and visit http://127.0.0.1:8001 , see more at [Development](https://github.com/ant-design/ant-design/wiki/Development).
+
+## 🤝 Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+
+<table>
+<tr>
+  <td>
+    <a href="https://next.ossinsight.io/widgets/official/compose-recent-top-contributors?repo_id=34526884" target="_blank" style="display: block" align="center">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://next.ossinsight.io/widgets/official/compose-recent-top-contributors/thumbnail.png?repo_id=34526884&image_size=auto&color_scheme=dark" width="280">
+        <img alt="Top Contributors of ant-design/ant-design - Last 28 days" src="https://next.ossinsight.io/widgets/official/compose-recent-top-contributors/thumbnail.png?repo_id=34526884&image_size=auto&color_scheme=light" width="280">
+      </picture>
+    </a>
+  </td>
+  <td rowspan="2">
+    <a href="https://next.ossinsight.io/widgets/official/compose-last-28-days-stats?repo_id=34526884" target="_blank" style="display: block" align="center">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://next.ossinsight.io/widgets/official/compose-last-28-days-stats/thumbnail.png?repo_id=34526884&image_size=auto&color_scheme=dark" width="655" height="auto">
+        <img alt="Performance Stats of ant-design/ant-design - Last 28 days" src="https://next.ossinsight.io/widgets/official/compose-last-28-days-stats/thumbnail.png?repo_id=34526884&image_size=auto&color_scheme=light" width="655" height="auto">
+      </picture>
+    </a>
+  </td>
+</tr>
+<tr>
+  <td>
+    <a href="https://next.ossinsight.io/widgets/official/compose-org-active-contributors?period=past_28_days&activity=new&owner_id=12101536&repo_ids=34526884" target="_blank" style="display: block" align="center">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://next.ossinsight.io/widgets/official/compose-org-active-contributors/thumbnail.png?period=past_28_days&activity=new&owner_id=12101536&repo_ids=34526884&image_size=2x3&color_scheme=dark" width="273" height="auto">
+        <img alt="New participants of ant-design - past 28 days" src="https://next.ossinsight.io/widgets/official/compose-org-active-contributors/thumbnail.png?period=past_28_days&activity=new&owner_id=12101536&repo_ids=34526884&image_size=2x3&color_scheme=light" width="273" height="auto">
+      </picture>
+    </a>
+  </td>
+</tr>
+</table>
+
+Let's build a better antd together.
+
+We warmly invite contributions from everyone. Before you get started, please take a moment to review our [Contributing Guide](https://ant.design/docs/react/contributing). Feel free to share your ideas through [Pull Requests](https://github.com/ant-design/ant-design/pulls) or [GitHub Issues](https://github.com/ant-design/ant-design/issues). If you're interested in enhancing our codebase, explore the [Development Instructions](https://github.com/ant-design/ant-design/wiki/Development) and enjoy your coding journey! :)
+
+For collaborators, adhere to our [Pull Request Principle](https://github.com/ant-design/ant-design/wiki/PR-principle) and utilize our [Pull Request Template](https://github.com/ant-design/ant-design/wiki/PR-principle#pull-request-template) when creating a Pull Request.
+
+## Issue funding
+
+We use [Polar.sh](https://polar.sh/ant-design) and [Issuehunt](https://issuehunt.io/repos/3452688) to up-vote and promote specific features that you would like to see and implement. Check our backlog and help us:
+
+<a href="https://polar.sh/ant-design"><img src="https://polar.sh/embed/fund-our-backlog.svg?org=ant-design" /></a>
+
+[![Let's fund issues in this repository](https://raw.githubusercontent.com/BoostIO/issuehunt-materials/master/v1/issuehunt-button-v1.svg)](https://issuehunt.io/repos/34526884)
