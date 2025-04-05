@@ -10,17 +10,9 @@
   * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// import { useState } from "react";
 import { Menu, Button } from "antd";
-import {BrowserRouter, NavLink, Route, Routes, useLocation} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 import logo from "../../assets/images/logo.png";
-import SignUp from "../../pages/SignUp";
-import SignIn from "../../pages/SignIn";
-import Home from "../../pages/Home";
-import Tables from "../../pages/Tables";
-import Billing from "../../pages/Billing";
-import Rtl from "../../pages/Rtl";
-import Profile from "../../pages/Profile";
 import React from "react";
 
 function Sidenav({ color }) {
