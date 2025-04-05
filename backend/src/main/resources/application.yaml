@@ -2,16 +2,16 @@
 spring:
   config:
     activate:
-      on-profile: local
+      on-profile: mysql
   datasource:
-    username: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
-    driverClassName: org.postgresql.Driver
-    password: xlfldpf1
+    username: root
+    url: jdbc:mysql://localhost:3306/develop?useSSL=false&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: xlfldpf321!
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
         show_sql: true
     hibernate:
@@ -23,10 +23,6 @@ spring:
       suffix: .html
 server:
   port: 8090
-
-
-
-
 
 ---
 
