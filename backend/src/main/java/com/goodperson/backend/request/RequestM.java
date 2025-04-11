@@ -2,14 +2,17 @@ package com.goodperson.backend.request;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import java.time.LocalDate;
 import java.util.List;
 
 @Setter
 @Getter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "ttrm_trm_rqst_m")
 public class RequestM {
 

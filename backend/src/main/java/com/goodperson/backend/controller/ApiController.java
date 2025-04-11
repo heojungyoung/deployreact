@@ -1,6 +1,5 @@
 package com.goodperson.backend.controller;
 
-import java.time.LocalDate;
 import java.util.List;
 import com.goodperson.backend.request.RequestM;
 import com.goodperson.backend.request.RequestService;
@@ -27,23 +26,8 @@ public class ApiController {
     }
 
     @PostMapping("/api/enroll")
-    public void enrole(@RequestBody RequestM data) {
-
-         RequestM requestM = new RequestM();
-         requestM.setTrmRqstTlt(data.getTrmRqstTlt());
-         requestM.setTrmRqstTypeCd(data.getTrmRqstTypeCd());
-         requestM.setFnlDueDt(LocalDate.now());
-         requestM.setRegDt(LocalDate.now());
-         requestM.setRegGuid("system");
-         requestM.setTrmRqstComt( data.getTrmRqstComt() );
-         requestM.setTrmRqstDueDt(LocalDate.now());
-         requestM.setTrmRqstOwnGuid(data.getTrmRqstOwnGuid());
-         requestM.setTrmRqstStd(data.getTrmRqstStd());
-         requestM.setTrmRqstTypeCd(data.getTrmRqstTypeCd());
-         requestM.setUpdDt(LocalDate.now());
-         requestM.setUpdGuid("system");
-         requestService.requestMSave(requestM);
-
+    public void enroll(@RequestBody RequestM data) {
+         requestService.requestMSave(data);
     }
 
 
