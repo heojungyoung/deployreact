@@ -16,8 +16,8 @@ public class RequestRplyComt {
     @Column(name = "RPLY_COMT_NO")
     private Integer rplyComtNo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRM_RQST_NO", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "TRM_RQST_NO")
     private RequestM requestM;
 
     @Column(name = "RPLY_COMT_TYPE_CD")

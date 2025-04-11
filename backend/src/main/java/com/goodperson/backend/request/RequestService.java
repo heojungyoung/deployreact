@@ -17,4 +17,9 @@ public class RequestService {
 
         return RequestM.orElse(null);
     }
+
+    public void requestMSave(RequestM requestM) {
+        this.requestMRepository.save(requestM);
+    }
+
 }

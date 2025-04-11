@@ -4,8 +4,8 @@ package com.goodperson.backend.request;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDate;
+import java.util.List;
 
 @Setter
 @Getter
@@ -14,6 +14,7 @@ import java.time.LocalDate;
 public class RequestM {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TRM_RQST_NO")
     private Integer trmRqstNo;
 
@@ -49,6 +50,12 @@ public class RequestM {
 
     @Column(name = "UPD_DT", nullable = false)
     private LocalDate updDt;
+
+    @OneToMany(mappedBy = "requestM")
+    private List<RequestRplyAtchFileL> requestRplyAtchFileL;
+
+    @OneToMany(mappedBy = "requestM")
+    private List<RequestRplyComt> requestRplyComt;
 
 }
 

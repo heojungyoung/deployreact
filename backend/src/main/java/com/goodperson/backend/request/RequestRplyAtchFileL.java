@@ -3,7 +3,6 @@ package com.goodperson.backend.request;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDate;
 
 @Entity
@@ -16,12 +15,12 @@ public class RequestRplyAtchFileL {
     @Column(name = "TRM_RQST_ATCH_FILE_NO")
     private Integer trmRqstAtchFileNo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRM_RQST_NO", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "TRM_RQST_NO")
     private RequestM requestM;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "RPLY_COMT_NO", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "RPLY_COMT_NO")
     private RequestRplyComt requestRplyComt;
 
     @Column(name = "RPLY_COMT_TYPE_CD")
