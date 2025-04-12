@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const EnrollComponent = () => {
     const navigate = useNavigate();
 
-    const onFinish = values => {
+    const onFinish = (values: { trm_rqst_tlt: any; trm_rqst_type_cd: any; trm_rqst_comt: any; trm_rqst_own_guid: any; trm_rqst_std: any; }) => {
         console.log('Success:', values);
         const data = {
             trmRqstTlt: values.trm_rqst_tlt,
@@ -38,7 +38,7 @@ const EnrollComponent = () => {
 
 
     };
-    const onFinishFailed = errorInfo => {
+    const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     };
     return (

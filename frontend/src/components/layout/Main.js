@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import HomeComponent from '../../pages/Home';
 import ProfileComponent from '../../pages/Profile';
-import TablesComponent from '../../pages/Tables';
+import TablesComponent from '../../pages/Table';
+import TestComponent from '../../pages/Test';
 
 const Home = () => <HomeComponent/>;
 const Profile = () => <ProfileComponent/>;
 const Table = () => <TablesComponent/>;
+const Test = () => <TestComponent/>;
 
 const MainComponent = () => {
   const [page, setPage] = useState('home');
@@ -19,6 +21,8 @@ const MainComponent = () => {
         return <Profile />;
       case 'table':
         return <Table />;
+      case 'test':
+        return <Test/>
       default:
         return <Home />;
     }
@@ -26,10 +30,11 @@ const MainComponent = () => {
 
   return (
       <div>
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{marginBottom: '20px'}}>
           <button onClick={() => setPage('home')}>홈</button>
           <button onClick={() => setPage('profile')}>프로필</button>
           <button onClick={() => setPage('table')}>설정</button>
+          <button onClick={() => setPage('test')}>list</button>
         </div>
         {renderComponent()}
       </div>

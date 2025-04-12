@@ -34,7 +34,6 @@ function Test() {
     const [message, setMessage] = useState("");
     const [list, setList] = useState([]);
 
-
     useEffect(() => {
         getApi();
     }, []);
@@ -50,28 +49,29 @@ function Test() {
             }).catch(console.error);
     }
 
-        return (
-            <div>
+    // @ts-ignore
+    return (
+        <div>
 
-                서버로부터 온 메시지: {message}
-                <DatePicker />
+            서버로부터 온 메시지: {message}
+            <DatePicker />
 
-                <Table
-                    dataSource={list}
-                    columns={columns}
-                    onRow={(record) => ({
-                        onClick: () => navigate(`/detail/${record.trmRqstNo}`),
-                    })}
-                />
+            <Table
+                dataSource={list}
+                columns={columns}
+                onRow={(record) => ({
+                    onClick: () => navigate(`/detail/${record}`),
+                })}
+            />
 
 
-                <NavLink to="/enrole">
-                    <span className="label">등록</span>
-                </NavLink>
+            <NavLink to="/enrole">
+                <span className="label">등록</span>
+            </NavLink>
 
-            </div>
+        </div>
 
-        );
+    );
 
 }
 

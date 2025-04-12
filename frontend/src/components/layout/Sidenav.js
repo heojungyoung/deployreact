@@ -1,6 +1,6 @@
 import { Menu, Button } from "antd";
 import {NavLink, useLocation} from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+import logo from "../../../../../typetest/frontend/src/assets/images/logo.png";
 import React from "react";
 
 function Sidenav({ color }) {
