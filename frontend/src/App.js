@@ -10,8 +10,10 @@ import Main from "./components/layout/Main";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 import React from "react";
-import Test from "./pages/test"
-import Enrole from "./pages/enrole"
+import Test from "./pages/test";
+import Enrole from "./pages/enrole";
+import Detail from "./pages/Detail";
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/test" element={<Test />} />
           <Route path="/enrole" element={<Enrole />} />
+          <Route path="/detail/:id" element={<Detail />} />
 
         </Routes>
 

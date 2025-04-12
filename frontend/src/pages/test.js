@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React, {useEffect, useState} from "react";
 import axios from 'axios';
-import { DatePicker } from 'antd';
-import {Table} from 'antd';
-import {NavLink} from "react-router-dom";
+import {DatePicker, Table} from 'antd';
+import {NavLink, useNavigate} from "react-router-dom";
 
 const columns = [
     {
@@ -27,44 +26,43 @@ const columns = [
     },
 ];
 
-class MainComponent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            message: "",
-            list: []
-        }
-    }
+
+function Test() {
+
+    const navigate = useNavigate();
+
+    const [message, setMessage] = useState("");
+    const [list, setList] = useState([]);
 
 
-    componentDidMount() {
-        this.getApi();
-    }
+    useEffect(() => {
+        getApi();
+    }, []);
 
 
-    getApi = () => {
+    const getApi = () => {
         axios.get("/api/hello")
             .then(res => {
                 console.log(res);
                 console.log(res.data);
-
-
-                this.setState({
-                    list: res.data
-                });
-
-
+                setList(res.data);
+                setMessage('hello');
             }).catch(console.error);
     }
 
-    render() {
         return (
             <div>
 
-                서버로부터 온 메시지: {this.state.message}
+                서버로부터 온 메시지: {message}
                 <DatePicker />
 
-                <Table dataSource={this.state.list} columns={columns}/>
+                <Table
+                    dataSource={list}
+                    columns={columns}
+                    onRow={(record) => ({
+                        onClick: () => navigate(`/detail/${record.trmRqstNo}`),
+                    })}
+                />
 
 
                 <NavLink to="/enrole">
@@ -74,7 +72,7 @@ class MainComponent extends Component {
             </div>
 
         );
-    }
+
 }
 
-export default MainComponent;
+export default Test;
