@@ -150,7 +150,6 @@ function Sidenav({ color }) {
 
   return (
     <>
-
       <div className="brand">
         <img src={logo} alt="" />
         <span>Dashboard</span>
