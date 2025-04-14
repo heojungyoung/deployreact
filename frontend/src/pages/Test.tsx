@@ -38,6 +38,12 @@ function Test() {
         getApi();
     }, []);
 
+    interface Request {
+        trmRqstNo: number;
+        trmRqstTypeCd : string;
+        trmRqstTlt : string;
+        trmRqstDueDt : Date;
+    }
 
     const getApi = () => {
         axios.get("/api/hello")
@@ -49,18 +55,17 @@ function Test() {
             }).catch(console.error);
     }
 
-    // @ts-ignore
     return (
         <div>
 
             서버로부터 온 메시지: {message}
             <DatePicker />
 
-            <Table
+            <Table<Request>
                 dataSource={list}
                 columns={columns}
                 onRow={(record) => ({
-                    onClick: () => navigate(`/detail/${record}`),
+                    onClick: () => navigate(`/detail/${record.trmRqstNo}`),
                 })}
             />
 
