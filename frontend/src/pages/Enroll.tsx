@@ -1,12 +1,14 @@
-import {Button, Checkbox, Form, Input} from 'antd';
+import {Button, Checkbox, Form, Input, Select} from 'antd';
 import { useNavigate } from 'react-router-dom';
 import {enrollUser } from './service/EnrollService'
 
 const EnrollComponent = () => {
     const navigate = useNavigate();
 
-    const onFinish = (values: { trm_rqst_tlt: any; trm_rqst_type_cd: any; trm_rqst_comt: any; trm_rqst_own_guid: any; trm_rqst_std: any; }) => {
+    const onFinish = (values: { trm_rqst_tlt: any; trm_rqst_type_cd: any;
+        trm_rqst_comt: any; trm_rqst_own_guid: any; trm_rqst_std: any }) => {
         console.log('Success:', values);
+
         const data = {
             trmRqstTlt: values.trm_rqst_tlt,
             trmRqstTypeCd: values.trm_rqst_type_cd,
@@ -68,7 +70,7 @@ const EnrollComponent = () => {
                                 name="trm_rqst_tlt"
                                 rules={[{required: true, message: 'Please input your password!'}]}
                             >
-                                <Input.Password/>
+                                <Input/>
                             </Form.Item>
 
                             <Form.Item
@@ -87,12 +89,14 @@ const EnrollComponent = () => {
                                 <Input/>
                             </Form.Item>
 
-                            <Form.Item
-                                label="trm_rqst_std"
-                                name="trm_rqst_std"
-                                rules={[{required: true, message: 'Please input your trm_rqst_std!'}]}
-                            >
-                                <Input/>
+                            <Form.Item label="Select" name= "trm_rqst_std">
+                                <Select>
+                                    <Select.Option value="infogress">infogress</Select.Option>
+                                    <Select.Option value="scheduling">scheduling</Select.Option>
+                                    <Select.Option value="delay">delay</Select.Option>
+                                    <Select.Option value="check">check</Select.Option>
+                                    <Select.Option value="completed">completed</Select.Option>
+                                </Select>
                             </Form.Item>
 
                             <Form.Item name="remember" valuePropName="checked" label={null}>

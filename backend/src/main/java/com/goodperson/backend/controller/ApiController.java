@@ -3,10 +3,7 @@ package com.goodperson.backend.controller;
 import java.util.List;
 import com.goodperson.backend.request.RequestM;
 import com.goodperson.backend.request.RequestService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -18,7 +15,7 @@ public class ApiController {
         this.requestService = requestService;
     }
 
-    @GetMapping("/api/hello")
+    @GetMapping("/request/list")
     public List<RequestM> hello() {
         List<RequestM> requestM = this.requestService.getNo();
         System.out.println(requestM);
@@ -30,5 +27,12 @@ public class ApiController {
          requestService.requestMSave(data);
     }
 
+
+    @GetMapping("/request/detail/{id}")
+    public RequestM getDetail(@PathVariable("id") int trmRqstNo) {
+        RequestM requestM = this.requestService.getDetail(trmRqstNo);
+        System.out.println(requestM);
+        return requestM;
+    }
 
 }

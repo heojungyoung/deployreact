@@ -10,9 +10,14 @@ const columns = [
         key: 'trmRqstNo',
     },
     {
-        title: 'trmRqstTypeCd',
+        title: 'typeCd',
         dataIndex: 'trmRqstTypeCd',
         key: 'trmRqstTypeCd',
+    },
+    {
+        title: 'test',
+        dataIndex: 'trmRqstStd',
+        key: 'trmRqstStd',
     },
     {
         title: 'trmRqstTlt',
@@ -30,8 +35,6 @@ const columns = [
 function Test() {
 
     const navigate = useNavigate();
-
-    const [message, setMessage] = useState("");
     const [list, setList] = useState([]);
 
     useEffect(() => {
@@ -46,19 +49,16 @@ function Test() {
     }
 
     const getApi = () => {
-        axios.get("/api/hello")
+        axios.get("/request/list")
             .then(res => {
                 console.log(res);
                 console.log(res.data);
                 setList(res.data);
-                setMessage('hello');
             }).catch(console.error);
     }
 
     return (
         <div>
-
-            서버로부터 온 메시지: {message}
             <DatePicker />
 
             <Table<Request>

@@ -43,4 +43,10 @@ public class RequestService {
         this.requestMRepository.save(requestM);
     }
 
+
+    public RequestM getDetail(int id) {
+        return this.requestMRepository.findBytrmRqstNo(id);
+    }
+
+
 }

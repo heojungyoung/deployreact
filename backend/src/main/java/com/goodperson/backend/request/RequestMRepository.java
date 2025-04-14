@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface RequestMRepository extends JpaRepository<RequestM, Integer> {
     Optional<List<RequestM>> findBy();
+    RequestM findBytrmRqstNo(int id);
 }
