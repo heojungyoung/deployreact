@@ -34,6 +34,8 @@ import team2 from "../assets/images/team-2.jpg";
 import team3 from "../assets/images/team-3.jpg";
 import team4 from "../assets/images/team-4.jpg";
 import card from  "../assets/images/info-card-1.jpg";
+
+
 function Home() {
 
     const { Title, Text } = Typography;
@@ -489,7 +491,7 @@ function Home() {
                                             </Paragraph>
                                         </div>
                                         <div className="card-footer">
-                                            <a className="icon-move-right" href="">
+                                            <a className="icon-move-right" href="/">
                                                 Read More
                                                 {<RightOutlined />}
                                             </a>
@@ -523,7 +525,7 @@ function Home() {
                                     </p>
                                 </div>
                                 <div className="card-footer">
-                                    <a className="icon-move-right" href="">
+                                    <a className="icon-move-right" href="/">
                                         Read More
                                         <RightOutlined />
                                     </a>

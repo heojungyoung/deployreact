@@ -83,7 +83,7 @@ const data = [
             <>
                 <div className="ant-employed">
                     <span>23/04/18</span>
-                    <a href="">Edit</a>
+                    <a href="/">Edit</a>
                 </div>
             </>
         ),
@@ -125,7 +125,7 @@ const data = [
             <>
                 <div className="ant-employed">
                     <span>23/12/20</span>
-                    <a href="">Edit</a>
+                    <a href="/">Edit</a>
                 </div>
             </>
         ),
@@ -169,7 +169,7 @@ const data = [
             <>
                 <div className="ant-employed">
                     <span>03/04/21</span>
-                    <a href="">Edit</a>
+                    <a href="/">Edit</a>
                 </div>
             </>
         ),
@@ -212,7 +212,7 @@ const data = [
             <>
                 <div className="ant-employed">
                     <span>03/04/21</span>
-                    <a href="">Edit</a>
+                    <a href="/">Edit</a>
                 </div>
             </>
         ),
@@ -253,7 +253,7 @@ const data = [
             <>
                 <div className="ant-employed">
                     <span>23/03/20</span>
-                    <a href="">Edit</a>
+                    <a href="/">Edit</a>
                 </div>
             </>
         ),
@@ -295,7 +295,7 @@ const data = [
             <>
                 <div className="ant-employed">
                     <span>14/04/17</span>
-                    <a href="">Edit</a>
+                    <a href="/">Edit</a>
                 </div>
             </>
         ),

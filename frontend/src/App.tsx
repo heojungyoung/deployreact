@@ -4,7 +4,7 @@ import Tables from "./pages/Table";
 import Billing from "./pages/Billing";
 import Rtl from "./pages/Rtl";
 import Profile from "./pages/Profile";
-import Main from "../src/components/layout/Main";
+import MainPage from "../src/components/layout/MainPage";
 import "../src/assets/styles/main.css";
 import "../src/assets/styles/responsive.css";
 import React from "react";
@@ -19,7 +19,7 @@ function App() {
         <BrowserRouter>
 
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/dashboard" element={<Home />} />
             <Route path="/tables" element={<Tables />} />
             <Route path="/billing" element={<Billing />} />

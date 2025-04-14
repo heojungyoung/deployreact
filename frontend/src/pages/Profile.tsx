@@ -212,13 +212,13 @@ function Profile() {
                                 USA
                             </Descriptions.Item>
                             <Descriptions.Item label="Social" span={3}>
-                                <a href="" className="mx-5 px-5">
+                                <a href="/" className="mx-5 px-5">
                                     {<TwitterOutlined />}
                                 </a>
-                                <a href="" className="mx-5 px-5">
+                                <a href="/" className="mx-5 px-5">
                                     {<FacebookOutlined style={{ color: "#344e86" }} />}
                                 </a>
-                                <a href="" className="mx-5 px-5">
+                                <a href="/" className="mx-5 px-5">
                                     {<InstagramOutlined style={{ color: "#e1306c" }} />}
                                 </a>
                             </Descriptions.Item>

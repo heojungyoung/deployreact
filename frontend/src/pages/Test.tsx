@@ -64,7 +64,6 @@ function Test() {
                 })}
             />
 
-
             <NavLink to="/enrole">
                 <span className="label">등록</span>
             </NavLink>
