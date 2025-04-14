@@ -7,36 +7,32 @@ import {
     Typography,
     Tooltip,
     Progress,
-    message,
     Button,
     Timeline
 } from "antd";
 import {
-    ToTopOutlined,
     MenuUnfoldOutlined,
     RightOutlined,
 } from "@ant-design/icons";
 import Paragraph from "antd/lib/typography/Paragraph";
 
-import Echart from "../../../../typetest/frontend/src/components/chart/EChart";
-import LineChart from "../../../../typetest/frontend/src/components/chart/LineChart";
+import Echart from "../components/chart/EChart";
+import LineChart from "../components/chart/LineChart";
 
-import ava1 from "../../../../typetest/frontend/src/assets/images/logo-shopify.svg";
-import ava2 from "../../../../typetest/frontend/src/assets/images/logo-atlassian.svg";
-import ava3 from "../../../../typetest/frontend/src/assets/images/logo-slack.svg";
-import ava4 from "../../../../typetest/frontend/src/assets/images/logo-spotify.svg";
-import ava5 from "../../../../typetest/frontend/src/assets/images/logo-jira.svg";
-import ava6 from "../../../../typetest/frontend/src/assets/images/logo-invision.svg";
-import team1 from "../../../../typetest/frontend/src/assets/images/team-1.jpg";
-import team2 from "../../../../typetest/frontend/src/assets/images/team-2.jpg";
-import team3 from "../../../../typetest/frontend/src/assets/images/team-3.jpg";
-import team4 from "../../../../typetest/frontend/src/assets/images/team-4.jpg";
-import card from "../../../../typetest/frontend/src/assets/images/info-card-1.jpg";
+import ava1 from "../assets/images/logo-shopify.svg";
+import ava2 from "../assets/images/logo-atlassian.svg";
+import ava3 from "../assets/images/logo-slack.svg";
+import ava4 from "../assets/images/logo-spotify.svg";
+import ava5 from "../assets/images/logo-jira.svg";
+import ava6 from "../assets/images/logo-invision.svg";
+import team1 from "../assets/images/team-1.jpg";
+import team2 from "../assets/images/team-2.jpg";
+import team3 from "../assets/images/team-3.jpg";
+import team4 from "../assets/images/team-4.jpg";
+import card from "../assets/images/info-card-1.jpg";
 
 function Home() {
     const { Title, Text } = Typography;
-
-    const onChange = (e: { target: { value: any; }; }) => console.log(`radio checked:${e.target.value}`);
 
     const [reverse, setReverse] = useState(false);
 
@@ -309,24 +305,6 @@ function Home() {
         },
     ];
 
-    const uploadProps = {
-        name: "file",
-        action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-        headers: {
-            authorization: "authorization-text",
-        },
-        onChange(info: { file: { status: string; name: any; }; fileList: any; }) {
-            if (info.file.status !== "uploading") {
-                console.log(info.file, info.fileList);
-            }
-            if (info.file.status === "done") {
-                message.success(`${info.file.name} file uploaded successfully`).then(r => console.log('success'));
-            } else if (info.file.status === "error") {
-                message.error(`${info.file.name} file upload failed.`).then(r => console.log('error'));
-            }
-        },
-    };
-
     return (
         <>
             <div className="layout-content">
@@ -341,7 +319,7 @@ function Home() {
                             xl={6}
                             className="mb-24"
                         >
-                            <Card bordered={false} className="criclebox ">
+                            <Card className="criclebox ">
                                 <div className="number">
                                     <Row align="middle" gutter={[24, 0]}>
                                         <Col xs={18}>
@@ -362,12 +340,12 @@ function Home() {
 
                 <Row gutter={[24, 0]}>
                     <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
-                        <Card bordered={false} className="criclebox h-full">
+                        <Card className="criclebox h-full">
                             <Echart />
                         </Card>
                     </Col>
                     <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
-                        <Card bordered={false} className="criclebox h-full">
+                        <Card className="criclebox h-full">
                             <LineChart />
                         </Card>
                     </Col>
@@ -375,7 +353,7 @@ function Home() {
 
                 <Row gutter={[24, 0]}>
                     <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-24">
-                        <Card bordered={false} className="criclebox cardbody h-full">
+                        <Card className="criclebox cardbody h-full">
                             <div className="project-ant">
                                 <div>
                                     <Title level={5}>Projects</Title>
@@ -457,7 +435,7 @@ function Home() {
 
                 <Row gutter={[24, 0]}>
                     <Col xs={24} md={12} sm={24} lg={12} xl={14} className="mb-24">
-                        <Card bordered={false} className="criclebox h-full">
+                        <Card className="criclebox h-full">
                             <Row>
                                 <Col
                                     xs={24}
@@ -477,7 +455,7 @@ function Home() {
                                             </Paragraph>
                                         </div>
                                         <div className="card-footer">
-                                            <a className="icon-move-right" href="#pablo">
+                                            <a className="icon-move-right" href="">
                                                 Read More
                                                 {<RightOutlined />}
                                             </a>
@@ -501,7 +479,7 @@ function Home() {
                     </Col>
 
                     <Col xs={24} md={12} sm={24} lg={12} xl={10} className="mb-24">
-                        <Card bordered={false} className="criclebox card-info-2 h-full">
+                        <Card className="criclebox card-info-2 h-full">
                             <div className="gradent h-full col-content">
                                 <div className="card-content">
                                     <Title level={5}>Work with the best</Title>
@@ -511,7 +489,7 @@ function Home() {
                                     </p>
                                 </div>
                                 <div className="card-footer">
-                                    <a className="icon-move-right" href="#pablo">
+                                    <a className="icon-move-right" href="">
                                         Read More
                                         <RightOutlined />
                                     </a>

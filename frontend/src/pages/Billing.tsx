@@ -10,9 +10,9 @@ import {
 } from "antd";
 
 import { PlusOutlined, ExclamationOutlined } from "@ant-design/icons";
-import mastercard from "../../../../typetest/frontend/src/assets/images/mastercard-logo.png";
-import paypal from "../../../../typetest/frontend/src/assets/images/paypal-logo-2.png";
-import visa from "../../../../typetest/frontend/src/assets/images/visa-logo.png";
+import mastercard from "../assets/images/mastercard-logo.png";
+import paypal from "../assets/images/paypal-logo-2.png";
+import visa from "../assets/images/visa-logo.png";
 
 function Billing() {
     const data = [
@@ -314,7 +314,6 @@ function Billing() {
                         <Col xs={24} xl={12} className="mb-24">
                             <Card
                                 title={wifi}
-                                bordered={false}
                                 className="card-credit header-solid h-ful"
                             >
                                 <h5 className="card-number">4562 1122 4594 7852</h5>
@@ -335,7 +334,7 @@ function Billing() {
                             </Card>
                         </Col>
                         <Col xs={12} xl={6} className="mb-24">
-                            <Card bordered={false} className="widget-2 h-full">
+                            <Card className="widget-2 h-full">
                                 <Statistic
                                     title={
                                         <>
@@ -350,7 +349,7 @@ function Billing() {
                             </Card>
                         </Col>
                         <Col xs={12} xl={6} className="mb-24">
-                            <Card bordered={false} className="widget-2 h-full">
+                            <Card className="widget-2 h-full">
                                 <Statistic
                                     title={
                                         <>
@@ -411,7 +410,6 @@ function Billing() {
                 </Col>
                 <Col span={24} md={8} className="mb-24">
                     <Card
-                        bordered={false}
                         className="header-solid h-full ant-invoice-card"
                         title={[<h6 className="font-semibold m-0">Invoices</h6>]}
                         extra={[
@@ -443,9 +441,7 @@ function Billing() {
                 <Col span={24} md={16} className="mb-24">
                     <Card
                         className="header-solid h-full"
-                        bordered={false}
                         title={[<h6 className="font-semibold m-0">Billing Information</h6>]}
-                        bodyStyle={{ paddingTop: "0" }}
                     >
                         <Row gutter={[24, 24]}>
                             {information.map((i, index) => (
@@ -481,8 +477,6 @@ function Billing() {
                 </Col>
                 <Col span={24} md={8} className="mb-24">
                     <Card
-                        bordered={false}
-                        bodyStyle={{ paddingTop: 0 }}
                         className="header-solid h-full  ant-list-yes"
                         title={<h6 className="font-semibold m-0">Your Transactions</h6>}
                         extra={
