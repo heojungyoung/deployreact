@@ -23,7 +23,7 @@ function Detail() {
 
   useEffect(() => {
     getApi();
-  }, []);
+  });
 
   const getApi = () => {
     axios
@@ -40,8 +40,8 @@ function Detail() {
     axios
       .delete(`/request/delete/${id}`)
       .then((res) => {
-        console.log("success data");
-        navigate("/");
+        console.log("success data" + res);
+        navigate("/test");
       })
       .catch(console.error);
   };

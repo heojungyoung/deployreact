@@ -74,6 +74,10 @@ function Test() {
       <NavLink to="/enrole">
         <span className="label">등록</span>
       </NavLink>
+      <br />
+      <NavLink to="/">
+        <span className="label">홈으로</span>
+      </NavLink>
     </div>
   );
 }
