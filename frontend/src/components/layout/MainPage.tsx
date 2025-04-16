@@ -2,11 +2,10 @@ import React, {useState} from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
-
 import HomeComponent from '../../pages/Home';
 import ProfileComponent from '../../pages/Profile';
 import TablesComponent from '../../pages/Table';
-import TestComponent from '../../pages/Test';
+import TestComponent from '../../pages/List';
 import Footer from "./Footer";
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -87,6 +86,7 @@ const App: React.FC = () => {
     const Profile = () => <ProfileComponent/>;
     const Table = () => <TablesComponent/>;
     const Test = () => <TestComponent/>;
+
 
     // 상태에 따라 렌더링할 컴포넌트를 선택
     const renderComponent = () => {

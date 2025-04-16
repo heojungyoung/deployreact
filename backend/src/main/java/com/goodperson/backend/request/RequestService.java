@@ -48,5 +48,9 @@ public class RequestService {
         return this.requestMRepository.findBytrmRqstNo(id);
     }
 
+    public void deleteRequest(int id) {
+        this.requestMRepository.deleteById(id);
+    }
+
 
 }

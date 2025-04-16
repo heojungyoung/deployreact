@@ -35,4 +35,11 @@ public class ApiController {
         return requestM;
     }
 
+
+    @DeleteMapping("/request/delete/{id}")
+    public void deleteRequest(@PathVariable("id") int trmRqstNo) {
+        this.requestService.deleteRequest(trmRqstNo);
+    }
+
+
 }
