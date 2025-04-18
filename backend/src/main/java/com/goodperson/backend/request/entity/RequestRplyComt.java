@@ -1,10 +1,11 @@
-package com.goodperson.backend.request;
+package com.goodperson.backend.request.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,12 +17,12 @@ public class RequestRplyComt {
     @Column(name = "RPLY_COMT_NO")
     private Integer rplyComtNo;
 
-    @ManyToOne
-    @JoinColumn(name = "TRM_RQST_NO")
-    private RequestM requestM;
-
     @Column(name = "RPLY_COMT_TYPE_CD")
     private String rplyComtTypeCd;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "RPLY_COMT_NO", referencedColumnName = "RPLY_COMT_NO")
+    private List<com.goodperson.backend.request.entity.RequestRplyAtchFileL> RequestRplyAtchFileL;
 
     @Column(name = "RPLY_COMT")
     private String rplyComt;

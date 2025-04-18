@@ -1,5 +1,6 @@
 package com.goodperson.backend.request;
 
+import com.goodperson.backend.request.entity.RequestM;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

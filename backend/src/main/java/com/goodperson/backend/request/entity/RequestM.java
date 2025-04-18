@@ -1,4 +1,4 @@
-package com.goodperson.backend.request;
+package com.goodperson.backend.request.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -52,11 +52,23 @@ public class RequestM {
     @Column(name = "UPD_DT", nullable = false)
     private LocalDate updDt;
 
-    @OneToMany(mappedBy = "requestM")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "TRM_RQST_NO", referencedColumnName = "TRM_RQST_NO")
     private List<RequestRplyAtchFileL> requestRplyAtchFileL;
 
-    @OneToMany(mappedBy = "requestM")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "TRM_RQST_NO", referencedColumnName = "TRM_RQST_NO")
     private List<RequestRplyComt> requestRplyComt;
+
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "TRM_RQST_NO", referencedColumnName = "TRM_RQST_NO")
+    private List<RequestItemL> requestItemL;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "TRM_RQST_NO", referencedColumnName = "TRM_RQST_NO")
+    private List<RequestCntr> requestCntr;
+
 
 }
 

@@ -1,10 +1,11 @@
-package com.goodperson.backend.request;
+package com.goodperson.backend.request.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -49,9 +50,8 @@ public class RequestCntr {
     @Column(name = "UPD_DT")
     private LocalDate updDt;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRM_RQST_NO", nullable = false)
-    private RequestM requestM;
-
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "TRM_RQST_CNTR_NO", referencedColumnName = "TRM_RQST_CNTR_NO")
+    private List<RequestCntrScheL> requestCntrScheL;
 
 }

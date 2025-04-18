@@ -52,9 +52,6 @@ function Test() {
       .then((res) => {
         console.log(res.data);
         setList(res.data);
-        console.log("copyList");
-        let copyList = res.data;
-        console.log(copyList);
       })
       .catch(console.error);
   };

@@ -1,4 +1,4 @@
-package com.goodperson.backend.request;
+package com.goodperson.backend.request.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -17,10 +17,6 @@ public class RequestCntrScheL {
     @Column(name = "SCHE_TYPE_CD", nullable = false, length = 50)
     private String scheTypeCd;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRM_RQST_CNTR_NO", nullable = false)
-    private RequestCntr trmRqstCntr;
-
     @Column(name = "DUE_DT")
     private LocalDate dueDt;
 
@@ -38,5 +34,6 @@ public class RequestCntrScheL {
 
     @Column(name = "UPD_DT")
     private Date updDt;
+
 
 }

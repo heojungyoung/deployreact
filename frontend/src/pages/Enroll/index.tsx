@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Input, Select } from "antd";
+import { Button, Form, Input, Select } from "antd";
 import { useNavigate } from "react-router-dom";
 import { enrollUser } from "./EnrollService";
 import "./index.css";
@@ -12,15 +12,23 @@ const EnrollComponent = () => {
     trm_rqst_comt: any;
     trm_rqst_own_guid: any;
     trm_rqst_std: any;
+    item: "";
   }) => {
-    console.log("Success:", values);
+    console.log("values:", values);
 
     const data = {
-      trmRqstTlt: values.trm_rqst_tlt,
-      trmRqstTypeCd: values.trm_rqst_type_cd,
-      trmRqstComt: values.trm_rqst_comt,
-      trmRqstOwnGuid: values.trm_rqst_own_guid,
-      trmRqstStd: values.trm_rqst_std,
+      requestM: {
+        trmRqstTlt: values.trm_rqst_tlt,
+        trmRqstTypeCd: values.trm_rqst_type_cd,
+        trmRqstComt: values.trm_rqst_comt,
+        trmRqstOwnGuid: values.trm_rqst_own_guid,
+        trmRqstStd: values.trm_rqst_std,
+      },
+      requestItemL: {
+        id: {
+          trmItm: values.item,
+        },
+      },
     };
 
     enrollUser(data)
@@ -54,7 +62,14 @@ const EnrollComponent = () => {
           labelCol={{ span: 8 }}
           wrapperCol={{ span: 16 }}
           style={{ maxWidth: 600 }}
-          initialValues={{ remember: true }}
+          initialValues={{
+            remember: true,
+            trm_rqst_type_cd: "example",
+            trm_rqst_comt: "example",
+            trm_rqst_own_guid: "example",
+            trm_rqst_tlt: "example",
+            trm_rqst_std: "scheduling",
+          }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off"
@@ -105,8 +120,13 @@ const EnrollComponent = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item name="remember" valuePropName="checked" label={null}>
-            <Checkbox>Remember me</Checkbox>
+          <Form.Item label="item" name="item">
+            <Select mode="multiple">
+              <Select.Option value="pp">pp</Select.Option>
+              <Select.Option value="sub">sub</Select.Option>
+              <Select.Option value="tex">tex</Select.Option>
+              <Select.Option value="hook">hook</Select.Option>
+            </Select>
           </Form.Item>
 
           <Form.Item label={null}>

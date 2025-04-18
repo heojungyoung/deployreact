@@ -1,8 +1,10 @@
 package com.goodperson.backend.controller;
 
 import java.util.List;
-import com.goodperson.backend.request.RequestM;
+
+import com.goodperson.backend.request.entity.RequestM;
 import com.goodperson.backend.request.RequestService;
+import com.goodperson.backend.request.RequestWrapper;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -23,16 +25,15 @@ public class ApiController {
     }
 
     @PostMapping("/api/enroll")
-    public void enroll(@RequestBody RequestM data) {
-         requestService.requestMSave(data);
+    public void enroll(@RequestBody RequestWrapper data) {
+        int trmRqstNo = requestService.requestMSave(data);
+        requestService.requestMItemSave(data, trmRqstNo);
     }
 
 
     @GetMapping("/request/detail/{id}")
     public RequestM getDetail(@PathVariable("id") int trmRqstNo) {
-        RequestM requestM = this.requestService.getDetail(trmRqstNo);
-        System.out.println(requestM);
-        return requestM;
+        return this.requestService.getDetail(trmRqstNo);
     }
 
 

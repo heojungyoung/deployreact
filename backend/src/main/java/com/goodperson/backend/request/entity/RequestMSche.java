@@ -1,4 +1,4 @@
-package com.goodperson.backend.request;
+package com.goodperson.backend.request.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

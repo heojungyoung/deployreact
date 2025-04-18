@@ -1,4 +1,4 @@
-package com.goodperson.backend.request;
+package com.goodperson.backend.request.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -15,13 +15,6 @@ public class RequestRplyAtchFileL {
     @Column(name = "TRM_RQST_ATCH_FILE_NO")
     private Integer trmRqstAtchFileNo;
 
-    @ManyToOne
-    @JoinColumn(name = "TRM_RQST_NO")
-    private RequestM requestM;
-
-    @ManyToOne
-    @JoinColumn(name = "RPLY_COMT_NO")
-    private RequestRplyComt requestRplyComt;
 
     @Column(name = "RPLY_COMT_TYPE_CD")
     private String rplyComtTypeCd;

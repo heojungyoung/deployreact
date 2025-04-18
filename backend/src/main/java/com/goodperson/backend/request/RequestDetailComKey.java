@@ -5,8 +5,8 @@ import jakarta.persistence.Embeddable;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
-
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Setter
@@ -16,14 +16,14 @@ import java.util.Objects;
 public class RequestDetailComKey implements Serializable {
 
     @Column(name = "TRM_ITM")
-    private String trmItm;
+    private List<String> trmItm;
 
     @Column(name = "TRM_RQST_NO")
     private int trmRqstNo;
 
     public RequestDetailComKey() {}
 
-    public RequestDetailComKey(String trmItm, int trmRqstNo) {
+    public RequestDetailComKey(List<String> trmItm, int trmRqstNo) {
         this.trmItm = trmItm;
         this.trmRqstNo = trmRqstNo;
     }

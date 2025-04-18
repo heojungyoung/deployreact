@@ -1,22 +1,21 @@
-package com.goodperson.backend.request;
+package com.goodperson.backend.request.entity;
 
+import com.goodperson.backend.request.RequestDetailComKey;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.*;
 import java.time.LocalDate;
 
 @Getter
 @Setter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "TTRM_TRM_RQST_ITM_L")
 public class RequestItemL {
 
     @EmbeddedId
     private RequestDetailComKey id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private RequestM requestM;
 
     @Column(name = "REG_GUID")
     private String regGuid;
