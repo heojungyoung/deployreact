@@ -11,6 +11,8 @@ import React from "react";
 import Test from "./pages/List/";
 import Enroll from "./pages/Enroll";
 import Detail from "./pages/Detail";
+import CompletionPage from "./pages/serveypie/pages/CompletionPage";
+import SurveyPage from "./pages/serveypie/pages/SurveyPage";
 
 function App() {
   return (
@@ -26,6 +28,10 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/enrole" element={<Enroll />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/done" element={<CompletionPage />}></Route>
+          <Route path="/survey/:surveyId" element={<SurveyPage />}>
+            <Route path=":step" element={<SurveyPage />}></Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
