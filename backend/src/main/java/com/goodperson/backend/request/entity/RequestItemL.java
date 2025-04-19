@@ -1,5 +1,6 @@
 package com.goodperson.backend.request.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.goodperson.backend.request.RequestDetailComKey;
 import jakarta.persistence.*;
 import lombok.*;
@@ -29,5 +30,10 @@ public class RequestItemL {
     @Column(name = "UPD_DT", nullable = false)
     private LocalDate updDt;
 
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TRM_RQST_NO", insertable=false, updatable=false)
+    @JsonIgnore
+    private RequestM requestM;
 
 }

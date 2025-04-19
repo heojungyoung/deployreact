@@ -3,6 +3,7 @@ package com.goodperson.backend.request.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Setter
@@ -11,6 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 @Table(name = "ttrm_trm_rqst_m")
 public class RequestM {
 
@@ -52,23 +54,9 @@ public class RequestM {
     @Column(name = "UPD_DT", nullable = false)
     private LocalDate updDt;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRM_RQST_NO", referencedColumnName = "TRM_RQST_NO")
-    private List<RequestRplyAtchFileL> requestRplyAtchFileL;
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRM_RQST_NO", referencedColumnName = "TRM_RQST_NO")
-    private List<RequestRplyComt> requestRplyComt;
-
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRM_RQST_NO", referencedColumnName = "TRM_RQST_NO")
-    private List<RequestItemL> requestItemL;
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRM_RQST_NO", referencedColumnName = "TRM_RQST_NO")
-    private List<RequestCntr> requestCntr;
-
+    @OneToMany(mappedBy = "RequestM")
+    @ToString.Exclude
+    private List<RequestItemL> requestItemL = new ArrayList<>();
 
 }
 
