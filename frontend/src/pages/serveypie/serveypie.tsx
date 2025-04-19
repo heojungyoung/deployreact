@@ -1,11 +1,73 @@
 import ProgressIndicator from "./ProgressIndicator";
 import QuestionBox from "./QuestionBox";
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import PageA from "./pages/PageA";
+import PageB from "./pages/PageB";
 
 function serveypie() {
+  enum BodyData {
+    Select = "select",
+    Text = "text",
+    Textarea = "textarea",
+  }
+
+  const questions = [
+    {
+      title: "질문 1입니다.",
+      desc: "설명 1입니다.",
+      type: BodyData.Select,
+      required: false,
+      option: {},
+    },
+    {
+      title: "질문 2입니다.",
+      desc: "설명 2입니다.",
+      type: BodyData.Text,
+      required: true,
+      option: {},
+    },
+    {
+      title: "질문 3입니다.",
+      desc: "설명 3입니다.",
+      type: BodyData.Textarea,
+      required: false,
+      option: {},
+    },
+  ];
+
+  const step = 1;
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [answers, setAnswers] = useState([]);
+
   return (
     <>
       <ProgressIndicator />
-      <QuestionBox />
+      <QuestionBox
+        Questions={questions[step]}
+        questionsLength={questions.length}
+        step={step}
+        answers={answers[step]}
+        setAnswers={(newAnswer: any) => {
+          setAnswers((answers) => {
+            const newAnswers: any = [...answers];
+            newAnswers[step] = newAnswer;
+            console.log("new array");
+            console.log(newAnswers);
+            return newAnswers;
+          });
+        }}
+        // prevAnswers는 업데이트 직전의 배열 상태입니다.
+        // 스프레드 연산자([...])로 얕은 복사(shallow copy)를 만들고,
+        // step 인덱스 위치에 들어올 새 답변을 할당한 뒤
+        // 복사한 배열 전체를 리턴합니다.
+      />
+
+      <Routes>
+        <Route path="/" element={<PageA />}></Route>
+        <Route path="/2" element={<PageB />}></Route>
+      </Routes>
     </>
   );
 }
