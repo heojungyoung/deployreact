@@ -5,7 +5,7 @@ function serveypie() {
   return (
     <>
       <Link to="/done" className="btn-sign-in">
-        <span>Sign in</span>
+        <span>completed</span>
       </Link>
 
       <Link to="/survey/:surveyId/0" className="btn-sign-in">

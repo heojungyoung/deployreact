@@ -2,6 +2,7 @@ package com.goodperson.backend.controller;
 
 import java.util.List;
 
+import com.goodperson.backend.request.Dto.RequestMDto;
 import com.goodperson.backend.request.entity.RequestM;
 import com.goodperson.backend.request.RequestService;
 import com.goodperson.backend.request.RequestWrapper;
@@ -30,12 +31,11 @@ public class ApiController {
         requestService.requestMItemSave(data, trmRqstNo);
     }
 
-
     @GetMapping("/request/detail/{id}")
-    public RequestM getDetail(@PathVariable("id") int trmRqstNo) {
-        return this.requestService.getDetail(trmRqstNo);
+    public RequestMDto getDetail(@PathVariable("id") int trmRqstNo) {
+        return this.requestService.getRequestDto(trmRqstNo);
+        // return this.requestService.getDetail(trmRqstNo);
     }
-
 
     @DeleteMapping("/request/delete/{id}")
     public void deleteRequest(@PathVariable("id") int trmRqstNo) {

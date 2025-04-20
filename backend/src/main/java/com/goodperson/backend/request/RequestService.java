@@ -1,14 +1,19 @@
 package com.goodperson.backend.request;
 
+import com.goodperson.backend.request.Dto.RequestItemDto;
+import com.goodperson.backend.request.Dto.RequestMDto;
 import com.goodperson.backend.request.entity.RequestItemL;
 import com.goodperson.backend.request.entity.RequestM;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -76,5 +81,40 @@ public class RequestService {
         this.requestItemLRepository.save(requestItemL);
 
     }
+
+    // 무한 참조 방지 코드
+    @Transactional(readOnly = true)
+    public RequestMDto getRequestDto(Integer id) {
+        RequestM entity = requestMRepository.findByIdWithItems(id)
+                .orElseThrow(() -> new RuntimeException("Not found id=" + id));
+
+        // 부모 필드 복사
+        RequestMDto dto = RequestMDto.builder()
+                .trmRqstNo(entity.getTrmRqstNo())
+                .trmRqstTypeCd(entity.getTrmRqstTypeCd())
+                .trmRqstTlt(entity.getTrmRqstTlt())
+                .trmRqstDueDt(entity.getTrmRqstDueDt())
+                .trmRqstComt(entity.getTrmRqstComt())
+                .trmRqstStd(entity.getTrmRqstStd())
+                .regDt(entity.getRegDt())
+                .regGuid(entity.getRegGuid())
+                .updDt(entity.getUpdDt())
+                .updGuid(entity.getUpdGuid())
+                .build();
+
+        // 자식 리스트 매핑
+        dto.setItems(
+                entity.getRequestItemL().stream()
+                        .map(item -> new RequestItemDto(
+                                item.getId().getTrmRqstNo(),
+                                item.getId().getTrmItm()
+                        ))
+                        .collect(Collectors.toList())
+        );
+
+        return dto;
+    }
+
+
 
 }

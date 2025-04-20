@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./index.css";
-import { Button, Input, Space, Modal } from "antd";
+import { Button, Input, Space, Modal, Select } from "antd";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import "@ant-design/v5-patch-for-react-19";
 
@@ -12,18 +12,24 @@ function Detail() {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  interface RequestItem {
+    trmRqstNo: number;
+    trmItm: string[];
+  }
+
   interface Request {
     trmRqstNo: number;
     trmRqstTypeCd: string;
     trmRqstTlt: string;
     trmRqstDueDt: Date;
+    items: RequestItem[];
   }
 
   const [request, setRequest] = useState<Request | null>(null);
 
   useEffect(() => {
     getApi();
-  });
+  }, []);
 
   const getApi = () => {
     axios
@@ -32,6 +38,22 @@ function Detail() {
         console.log("detail");
         console.log(res.data);
         setRequest(res.data);
+
+        const cc = res.data.items.forEach((item: RequestItem) => {
+          item.trmItm.forEach((trmItm) => {
+            console.log(trmItm);
+            return trmItm;
+          });
+        });
+
+        const dd = res.data.items.flatMap((item: RequestItem) => {
+          return item.trmItm.map((trmItm) => {
+            console.log(trmItm);
+            return trmItm;
+          });
+        });
+
+        console.log(dd);
       })
       .catch(console.error);
   };
