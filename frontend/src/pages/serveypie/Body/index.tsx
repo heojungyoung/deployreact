@@ -1,5 +1,7 @@
 import TextInput from "../TextInput";
 import React from "react";
+import TextAreaInput from "../TextAreaInput";
+import SelectInput from "../SelectInput";
 
 enum BodyData {
   Select = "select",
@@ -11,21 +13,30 @@ interface BodyProp {
   type: BodyData;
   answer: any[];
   setAnswers: Function;
+  options: {
+    placeholder: string;
+    items: string[];
+  };
 }
 
-interface TextProp {
+interface TypeProp {
   answer: any[];
   setAnswers: Function;
+  options: {
+    placeholder: string;
+    items: string[];
+  };
 }
 
-function Body({ type, answer, setAnswers }: BodyProp) {
-  let InputComponent: React.FC<TextProp> | null = null;
+function Body({ type, answer, setAnswers, options }: BodyProp) {
+  let InputComponent: React.FC<TypeProp> | null = null;
 
   if (type === "select") {
-    // InputComponent = SelectInput;
+    InputComponent = SelectInput;
   } else if (type === "text") {
     InputComponent = TextInput;
   } else if (type === "textarea") {
+    InputComponent = TextAreaInput;
   }
 
   if (!InputComponent) {
@@ -34,7 +45,11 @@ function Body({ type, answer, setAnswers }: BodyProp) {
 
   return (
     <>
-      <InputComponent answer={answer} setAnswers={setAnswers} />
+      <InputComponent
+        answer={answer}
+        setAnswers={setAnswers}
+        options={options}
+      />
     </>
   );
 }

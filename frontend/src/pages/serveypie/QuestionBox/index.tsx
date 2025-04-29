@@ -14,7 +14,10 @@ interface Question {
   desc: string;
   type: BodyData;
   required: boolean;
-  option: {};
+  option: {
+    placeholder: string;
+    items: string[];
+  };
 }
 
 interface QuestionBoxProps {
@@ -34,6 +37,7 @@ function QuestionBox(questionBoxProps: QuestionBoxProps) {
         type={questionBoxProps.Questions.type}
         answer={questionBoxProps.answers}
         setAnswers={questionBoxProps.setAnswers}
+        options={questionBoxProps.Questions.option}
       ></Body>
       <ActionButton
         questionsLength={questionBoxProps.questionsLength}

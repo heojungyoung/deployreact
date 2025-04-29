@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./index.css";
-import { Button, Input, Space, Modal, Select } from "antd";
+import { Button, Input, Space, Modal } from "antd";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import "@ant-design/v5-patch-for-react-19";
 
@@ -27,6 +27,8 @@ function Detail() {
 
   const [request, setRequest] = useState<Request | null>(null);
 
+  const [trmItm, setTrmItm] = useState("");
+
   useEffect(() => {
     getApi();
   }, []);
@@ -39,21 +41,15 @@ function Detail() {
         console.log(res.data);
         setRequest(res.data);
 
-        const cc = res.data.items.forEach((item: RequestItem) => {
-          item.trmItm.forEach((trmItm) => {
-            console.log(trmItm);
-            return trmItm;
-          });
-        });
-
-        const dd = res.data.items.flatMap((item: RequestItem) => {
+        const trmItm = res.data.items.flatMap((item: RequestItem) => {
           return item.trmItm.map((trmItm) => {
             console.log(trmItm);
             return trmItm;
           });
         });
 
-        console.log(dd);
+        console.log(trmItm);
+        setTrmItm(trmItm);
       })
       .catch(console.error);
   };
@@ -90,6 +86,7 @@ function Detail() {
         <Input value={request?.trmRqstTypeCd} />
         <Input value={request?.trmRqstTlt} />
         <Input value={request?.trmRqstNo} />
+        <div>{trmItm}</div>
 
         <Button type="primary" onClick={() => showConfirm()}>
           delete

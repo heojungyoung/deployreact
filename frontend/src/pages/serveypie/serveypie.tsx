@@ -8,8 +8,11 @@ function serveypie() {
         <span>completed</span>
       </Link>
 
+      <br />
+      <br />
+
       <Link to="/survey/:surveyId/0" className="btn-sign-in">
-        <span>Sign in</span>
+        <span>surveyed</span>
       </Link>
     </>
   );

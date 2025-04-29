@@ -9,10 +9,9 @@ interface TextProp {
   };
 }
 
-function TextInput({ answer, setAnswers, options }: TextProp) {
+function TextAreaInput({ answer, setAnswers, options }: TextProp) {
   return (
-    <Input
-      type="text"
+    <TextArea
       value={answer}
       onChange={(e) => {
         setAnswers(e.target.value);
@@ -22,13 +21,15 @@ function TextInput({ answer, setAnswers, options }: TextProp) {
   );
 }
 
-const Input = styled.input`
+const TextArea = styled.textarea`
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
   border-radius: 5px;
 
   font-size: 18px;
   line-height: 21px;
+  height: 196px;
+  resize: none;
 `;
 
-export default TextInput;
+export default TextAreaInput;

@@ -19,21 +19,30 @@ function SurveyPage() {
       desc: "설명 1입니다.",
       type: BodyData.Select,
       required: false,
-      option: {},
+      option: {
+        placeholder: "placeholder 1 입니다.",
+        items: ["답변1", "답변2", "답변3", "답변4", "답변5"],
+      },
     },
     {
       title: "질문 2입니다.",
       desc: "설명 2입니다.",
       type: BodyData.Text,
       required: true,
-      option: {},
+      option: {
+        placeholder: "placeholder 2 입니다.",
+        items: [],
+      },
     },
     {
       title: "질문 3입니다.",
       desc: "설명 3입니다.",
       type: BodyData.Textarea,
       required: false,
-      option: {},
+      option: {
+        placeholder: "placeholder 3 입니다.",
+        items: [],
+      },
     },
   ];
 
