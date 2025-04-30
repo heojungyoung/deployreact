@@ -34,19 +34,20 @@ public class RequestService {
 
         LocalDate now = LocalDate.now();
         logger.info(now.toString());
-        RequestM requestM = RequestM.builder()
-                .trmRqstTlt( data.getRequestM().getTrmRqstTlt())
-                .trmRqstTypeCd(data.getRequestM().getTrmRqstTypeCd())
-                .fnlDueDt(now)
-                .regDt(now)
-                .regGuid("system")
-                .trmRqstComt(data.getRequestM().getTrmRqstComt())
-                .trmRqstDueDt(now)
-                .trmRqstOwnGuid(data.getRequestM().getTrmRqstOwnGuid())
-                .trmRqstStd(data.getRequestM().getTrmRqstStd())
-                .updDt(now)
-                .updGuid("system")
-                .build();
+
+        RequestM requestM = new RequestM();
+
+        requestM.setTrmRqstTlt(data.getRequestM().getTrmRqstTlt());
+        requestM.setTrmRqstTypeCd(data.getRequestM().getTrmRqstTypeCd());
+        requestM.setFnlDueDt(now);
+        requestM.setRegDt(now);
+        requestM.setRegGuid("system");
+        requestM.setTrmRqstComt( data.getRequestM().getTrmRqstComt() );
+        requestM.setTrmRqstDueDt(now);
+        requestM.setTrmRqstOwnGuid(data.getRequestM().getTrmRqstOwnGuid());
+        requestM.setTrmRqstStd(data.getRequestM().getTrmRqstStd());
+        requestM.setUpdDt(now);
+        requestM.setUpdGuid("system");
 
         this.requestMRepository.save(requestM);
 
