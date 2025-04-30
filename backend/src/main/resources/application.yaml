@@ -59,7 +59,7 @@ spring:
       on-profile: ubuntu
   datasource:
     username: postgres
-    url: jdbc:postgresql://182.211.204.237:5432/postgres
+    url: jdbc:postgresql://192.168.0.227:5432/postgres
     driverClassName: org.postgresql.Driver
     password: xlfldpf1
   jpa:
