@@ -56,7 +56,7 @@ server:
 spring:
   config:
     activate:
-      on-profile: home
+      on-profile: ubuntu
   datasource:
     username: postgres
     url: jdbc:postgresql://182.211.204.237:5432/postgres
