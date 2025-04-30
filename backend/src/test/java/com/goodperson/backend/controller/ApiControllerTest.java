@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -32,7 +31,7 @@ class ApiControllerTest {
     @Test
     void apiTest() throws Exception {
 
-        MvcResult result = mockMvc.perform(get("/request/list")
+        MvcResult result = mockMvc.perform(get("/api/test")
                         .contentType(APPLICATION_JSON))
                 .andDo(print())
                 .andReturn();
