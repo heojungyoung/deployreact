@@ -32,7 +32,7 @@ class ApiControllerTest {
     @Test
     void apiTest() throws Exception {
 
-        MvcResult result = mockMvc.perform(get("/api/hello")
+        MvcResult result = mockMvc.perform(get("/request/list")
                         .contentType(APPLICATION_JSON))
                 .andDo(print())
                 .andReturn();
