@@ -18,6 +18,11 @@ public class ApiController {
         this.requestService = requestService;
     }
 
+    @GetMapping("/api/test")
+    public String test() {
+        return "ok";
+    }
+
     @GetMapping("/request/list")
     public List<RequestM> hello() {
         List<RequestM> requestM = this.requestService.getNo();
