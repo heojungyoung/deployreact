@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./index.css";
 import { Button, Input, Space, Modal } from "antd";
 import { ExclamationCircleFilled } from "@ant-design/icons";
@@ -29,11 +29,7 @@ function Detail() {
 
   const [trmItm, setTrmItm] = useState("");
 
-  useEffect(() => {
-    getApi();
-  }, []);
-
-  const getApi = () => {
+  let getApi = () => {
     axios
       .get(`/request/detail/${id}`)
       .then((res) => {
@@ -53,6 +49,8 @@ function Detail() {
       })
       .catch(console.error);
   };
+
+  getApi();
 
   const deleteData = () => {
     axios

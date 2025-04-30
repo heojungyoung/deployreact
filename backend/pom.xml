@@ -16,7 +16,7 @@
 
 
 	<properties>
-		<java.version>22</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
@@ -164,6 +164,20 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${lombok.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
 			</plugin>
 
 		</plugins>
