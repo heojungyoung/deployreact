@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React from "react";
 import styled from "styled-components";
 
 interface TextProp {
@@ -10,11 +10,16 @@ interface TextProp {
   };
 }
 
-function Item({ children }: { children: ReactNode }) {
+interface ItemProps {
+  children: React.ReactNode;
+  onChange?: (e: any) => void; // if you really need onChange, you can do this instead
+}
+
+function Item({ children, onChange }: ItemProps) {
   return (
     <ItemWrapper>
       <label>
-        <input type="checkbox" />
+        <input type="checkbox" onChange={onChange} />
         <span />
         <div>{children}</div>
       </label>
@@ -22,17 +27,39 @@ function Item({ children }: { children: ReactNode }) {
   );
 }
 
-function SelectInput({ answer, setAnswers, options }: TextProp) {
+function SelectInput({ answer = [], setAnswers, options }: TextProp) {
+  const handleChange = (isChecked: any, index: any) => {
+    console.log("answer :", answer, index, isChecked);
+    if (isChecked) {
+      // setAnswers (index 추가)
+      setAnswers([...answer, index]);
+    } else {
+      // setAnswers (index 빼기)
+      setAnswers(answer.filter((i: any) => i !== index));
+    }
+  };
+
   return (
-    <div>
+    <SelectInputWrapper>
       {options.items.map((item, index) => (
-        <Item key={index}>{item}</Item>
+        <Item
+          key={index}
+          onChange={(e: any) => {
+            handleChange(e.target.checked, index);
+          }}
+        >
+          {item}
+        </Item>
       ))}
-      <span>{answer}</span>
-      <span onClick={() => setAnswers}></span>
-    </div>
+    </SelectInputWrapper>
   );
 }
+
+const SelectInputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
 
 const ItemWrapper = styled.div`
   input[type="checkbox"] {
