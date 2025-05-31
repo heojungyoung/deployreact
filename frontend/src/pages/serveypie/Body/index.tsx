@@ -54,4 +54,7 @@ function Body({ type, answer, setAnswers, options }: BodyProp) {
   );
 }
 
+
+
+
 export default Body;

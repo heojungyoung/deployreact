@@ -18,24 +18,25 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/dashboard" element={<Home />} />
-          <Route path="/tables" element={<Tables />} />
-          <Route path="/billing" element={<Billing />} />
-          <Route path="/rtl" element={<Rtl />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/test" element={<Test />} />
-          <Route path="/enrole" element={<Enroll />} />
-          <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/done" element={<CompletionPage />}></Route>
-          <Route path="/survey/:surveyId" element={<SurveyPage />}>
-            <Route path=":step" element={<SurveyPage />}></Route>
-          </Route>
-        </Routes>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/dashboard" element={<Home />} />
+              <Route path="/tables" element={<Tables />} />
+              <Route path="/billing" element={<Billing />} />
+              <Route path="/rtl" element={<Rtl />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/test" element={<Test />} />
+              <Route path="/enrole" element={<Enroll />} />
+              <Route path="/detail/:id" element={<Detail />} />
+              <Route path="/done" element={<CompletionPage />}></Route>
+              <Route path="/survey/:surveyId" element={<SurveyPage />}>
+              <Route path=":step" element={<SurveyPage />}></Route>
+            </Route>
+            </Routes>
       </BrowserRouter>
     </div>
   );
 }
+
 
 export default App;
