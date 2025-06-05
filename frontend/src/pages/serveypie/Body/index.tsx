@@ -2,6 +2,7 @@ import TextInput from "../TextInput";
 import React from "react";
 import TextAreaInput from "../TextAreaInput";
 import SelectInput from "../SelectInput";
+import styled from "styled-components";
 
 enum BodyData {
   Select = "select",
@@ -44,17 +45,19 @@ function Body({ type, answer, setAnswers, options }: BodyProp) {
   }
 
   return (
-    <>
+    <BodyWrapper>
       <InputComponent
         answer={answer}
         setAnswers={setAnswers}
         options={options}
       />
-    </>
+    </BodyWrapper>
   );
 }
 
-
-
+const BodyWrapper = styled.div`
+  margin-left: 38px;
+  flex : 1;
+`;
 
 export default Body;

@@ -2,6 +2,7 @@ import ProgressIndicator from "../../ProgressIndicator";
 import QuestionBox from "../../QuestionBox";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 
 function SurveyPage() {
   const params = useParams();
@@ -52,7 +53,7 @@ function SurveyPage() {
   const [answers, setAnswers] = useState([]);
 
   return (
-    <div>
+    <SurveyPageWrapper>
       <ProgressIndicator />
       <QuestionBox
         Questions={questions[step]}
@@ -76,8 +77,13 @@ function SurveyPage() {
         // step 인덱스 위치에 들어올 새 답변을 할당한 뒤
         // 복사한 배열 전체를 리턴합니다.
       />
-    </div>
+    </SurveyPageWrapper>
   );
 }
+
+const SurveyPageWrapper = styled.div`
+   width: 100%;
+   min-height: 100%;
+`;
 
 export default SurveyPage;

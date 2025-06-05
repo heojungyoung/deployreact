@@ -1,10 +1,13 @@
-import React from "react";
+import styled from "styled-components";
 
-type TitleProps = {
-  children: React.ReactNode;
-};
+const Desc = styled.h4`
+   font-size: 18px;
+   line-height: 21px;
+   color: #463c3c;
+   font-weight: normal;   
+   margin-top: 16px;  
+   margin-bottom: 60px;
+   margin-left: 38px; 
+`;
 
-function Desc({ children }: TitleProps) {
-  return <h4>{children}</h4>;
-}
 export default Desc;

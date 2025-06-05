@@ -31,7 +31,7 @@ interface QuestionBoxProps {
 
 function QuestionBox(questionBoxProps: QuestionBoxProps) {
   return (
-    <AppWrapper>
+      <AppWrapper>
       <Box>
           <div>
           <Title>{questionBoxProps.Questions.title}</Title>
@@ -49,6 +49,7 @@ function QuestionBox(questionBoxProps: QuestionBoxProps) {
         </div>
     </Box>
     </AppWrapper>
+
   );
 }
 
@@ -68,6 +69,9 @@ const Box =styled.div`
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
     border-radius: 16px;
     padding: 60px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 `;
 
 

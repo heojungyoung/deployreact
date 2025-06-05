@@ -6,7 +6,7 @@ type TitleProps = {
 };
 
 function Title({ children }: TitleProps) {
-  return <TitleWrapper>{children}</TitleWrapper>;
+  return <TitleWrapper><span>Q.</span>{children}</TitleWrapper>;
 }
 
 
@@ -15,7 +15,12 @@ const TitleWrapper = styled.h1`
    font-size: 24px;
    line-height: 28px;
    color: #121111; 
-   margin:0
+   margin:0;
+  
+   span {
+     margin-right: 12px; 
+   }
+  
 `;
 
 
